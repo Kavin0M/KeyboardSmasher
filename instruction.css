@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@200&display=swap');
+
+*{
+    border: 0px;
+    margin: 0px;
+    font-family: 'Cutive Mono', monospace;
+    color: white;
+}
+
+body{
+    background-color: #2b2b2b;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    font-size: 60px;
+    margin: 60px;
+    font-weight: 900;
+}
+
+#instruction{
+    width: 60%;
+    font-size: 20px;
+    margin: 40px    ;
+}
+
+#goodluck{
+    font-weight: 900;
+    margin: 40px;
+    font-size: 40px;
+}
+
+#continue{
+    cursor: pointer;
+    margin: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    font-size: 45px;
+    height: 65px;
+    width: 240px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#skip{
+    padding: 30px 40px 0px 0px;
+    align-self: flex-end;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#error{
+    height: 100vh;
+    width: 100vw;
+    font-size: 40px;
+    font-weight: 400;
+    display: none;
+}
+
+@media (orientation: landscape) and (max-height: 480px){
+    #title{
+        font-size:30px;
+        margin: 5px 0px 15px 0px;
+    }
+    #instruction{
+        font-size: 15px;
+        margin: 15px;
+    }
+    #goodluck{
+        font-size: 20px;
+        margin: 15px;
+    }
+    #continue{
+        font-size: 20px;
+        margin: 10px;
+        height: 30px;
+        width: 110px;
+    }
+    #skip{
+        padding: 0px;
+    }
+}
+
+@media (orientation: portrait){
+    #content{
+        display: none;
+    }
+    #error{
+        display: flex;
+        align-items: center;
+    }
+}

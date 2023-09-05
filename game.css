@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@200&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Cutive Mono', monospace;
+    color: white;
+}
+
+body{
+    background-color: #2b2b2b;
+    overflow: hidden;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title{
+    font-weight: 600;
+    font-size: 70px;
+    margin: 60px 0px 30px 0px;
+}
+
+.row{
+    flex-direction: row;
+}
+
+.button{
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid black;
+    height: 60px;
+    width: 60px;
+    margin: 5px;
+    color: black;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+#symbol1{
+    width: 40px;
+}
+
+#backspace{
+    width: 120px;
+}
+
+#tab{
+    width: 80px;
+}
+
+#symbol6{
+    width: 80px;
+}
+
+#capslk{
+    width: 110px;
+}
+
+#enter{
+    width: 130px;
+}
+
+.shift{
+    width: 160px;
+}
+
+.color1{
+    background-color: #845EC2;
+}
+
+.color2{
+    background-color: #D65DB1;
+}
+
+.color3{
+    background-color: #FF6F91;
+}
+
+.color4{
+    background-color: #FF9671;
+}
+
+.color5{
+    background-color: #FFC75F;
+}
+
+.color6{
+    background-color: #F9F871;
+}
+
+#text{
+    height: 100%;
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0px 0px 0px ;
+}
+
+#error{
+    height: 100vh;
+    width: 100vw;
+    font-size: 40px;
+    font-weight: 400;
+    display: none;
+}
+
+@media (orientation: landscape) and (max-height: 600px){
+    #title{
+        font-size: 30px;
+        margin-top: 0px;
+    }
+    .button{
+        width: 50px;
+        height: 50px;
+        font-size: 15px;
+        margin: 1px;
+    }
+    .shift{
+        width: 160px;
+    }
+    #text{
+        font-size: 20px;
+    }
+    .shift{
+        display: none;
+    }
+    #enter{
+        display: none;
+    }
+    #capslk{
+        display: none;
+    }
+    #tab{
+        display: none;
+    }
+    #backspace{
+        display: none;
+    }
+    #symbol6{
+        display: none;
+    }
+}
+
+@media (orientation: portrait){
+    #content{
+        display: none;
+    }
+    #error{
+        display: flex;
+        align-items: center;
+    }
+}

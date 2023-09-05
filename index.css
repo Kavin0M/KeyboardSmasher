@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@200&display=swap');
+
+*{
+    border: 0px;
+    margin: 0px;
+    font-family: 'Cutive Mono', monospace;
+    color: white;
+}
+
+body{
+    background-color: #2b2b2b;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    font-size: 60px;
+    margin: 60px;
+    font-weight: 900;
+}
+
+input{
+    border-radius: 20px;
+    margin: 20px;
+    height: 60px;
+    width: 400px;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
+
+#button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 70px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    font-size: 45px;
+    height: 65px;
+    width: 150px;
+}
+
+#error{
+    height: 100vh;
+    width: 100vw;
+    font-size: 40px;
+    font-weight: 400;
+    display: none;
+}
+
+@media (orientation: landscape) and (max-height: 480px){
+    #title{
+        font-size:30px;
+        margin: 30px 0px 15px 0px;
+    }
+    input{
+        height: 40px;
+        width: 300px;
+        margin: 20px;
+    }
+}
+
+@media (orientation: portrait){
+    #content{
+        display: none;
+    }
+    #error{
+        display: flex;
+        align-items: center;
+    }
+}
