@@ -54,7 +54,7 @@ body{
 #background{
     z-index: 0;
     overflow: hidden;
-    filter: blur(2px);
+    filter: blur(3px);
     position: fixed;
     top: 0;
     left: 0;
