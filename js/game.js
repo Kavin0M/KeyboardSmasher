@@ -40,8 +40,8 @@ function check(button,arr){
             flag = false
         }
     }else{
-        // localStorage.setItem(nickname,score)
-        // window.open("gameover.html","_self")
+        localStorage.setItem(nickname,score)
+        window.open("gameover.html","_self")
     }
 }
 
