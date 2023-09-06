@@ -218,5 +218,5 @@ let score = localStorage.getItem(nickname)
 points.innerText = score
 
 document.getElementById("retry").addEventListener("click",()=>{
-    window.open("instructions.html","_self")
+    window.open("instruction.html","_self")
 })
