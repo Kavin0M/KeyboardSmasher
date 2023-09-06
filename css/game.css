@@ -107,10 +107,16 @@ body{
     display: none;
 }
 
+#score{
+    align-self: flex-start  ;
+    font-size: 25px;
+    font-weight: 600;
+}
+
 @media (orientation: landscape) and (max-height: 600px){
     #title{
         font-size: 30px;
-        margin-top: 0px;
+        margin: 0px 0px 5px 0px;
     }
     .button{
         width: 50px;
@@ -141,6 +147,9 @@ body{
     }
     #symbol6{
         display: none;
+    }
+    #score{
+        font-size: 15px;
     }
 }
 

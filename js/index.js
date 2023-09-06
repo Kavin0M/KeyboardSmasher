@@ -3,12 +3,24 @@ const title = document.getElementById("title")
 const arr = ["#845EC2", "#D65DB1", "#FF6F91", "#FF9671", "#FFC75F", "#F9F871"]
 
 button.addEventListener("click",()=>{
-    if (document.getElementById("username").value != "" && document.getElementById("nickname").value != ""){
+    if (document.getElementById("username").value != ""){
+      document.getElementById("alert1").style.display = "none"
       const username = document.getElementById("username").value
+    }else{
+      document.getElementById("alert1").style.display = "block"
+    }
+
+    if (document.getElementById("nickname").value != ""){
+      document.getElementById("alert2").style.display = "none"
       const nickname = document.getElementById("nickname").value
-      window.open("instruction.html","_self")
-      localStorage.setItem("username",username)
       localStorage.setItem("nickname",nickname)
+    }else{
+      document.getElementById("alert2")
+      document.getElementById("alert2").style.display = "block"
+    }
+
+    if (document.getElementById("username").value != "" && document.getElementById("nickname").value != ""){
+      window.open("instruction.html","_self")
     }
 })
 
