@@ -1,5 +1,5 @@
 let nickname = localStorage.getItem("nickname")
-
+let sound = new Audio("sound.mp3")
 const button = document.getElementById("num1")
 const scoreDisplay = document.getElementById("points")
 const colorList = {
@@ -40,8 +40,8 @@ function check(button,arr){
             flag = false
         }
     }else{
-        localStorage.setItem(nickname,score)
-        window.open("gameover.html","_self")
+        // localStorage.setItem(nickname,score)
+        // window.open("gameover.html","_self")
     }
 }
 
@@ -81,6 +81,8 @@ function buttonFlash(element){
     button.style.backgroundColor = "#2b2b2b"
     button.style.color = "white"
     button.style.borderColor = "white"
+    sound.currentTime = 0
+    sound.play()
     setTimeout(()=>{
         button.style.backgroundColor = colorList[button.classList[2]]
         button.style.color = "black"

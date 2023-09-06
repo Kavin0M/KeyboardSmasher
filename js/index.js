@@ -1,8 +1,11 @@
 const button = document.getElementById("button")
 const title = document.getElementById("title")
 const arr = ["#845EC2", "#D65DB1", "#FF6F91", "#FF9671", "#FFC75F", "#F9F871"]
+let sound = new Audio("sound.mp3")
 
 button.addEventListener("click",()=>{
+  sound.currentTime = 0
+  sound.play()
     if (document.getElementById("username").value != ""){
       document.getElementById("alert1").style.display = "none"
       const username = document.getElementById("username").value

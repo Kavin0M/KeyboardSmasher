@@ -4,6 +4,7 @@ const goodluck = document.getElementById("goodluck")
 const nextPage = document.getElementById("next-page")
 const continueButton = document.getElementById("continue")
 const skip = document.getElementById("skip")
+let sound = new Audio("sound.mp3")
 var flag = true
 
 const text1 = "Instructions"
@@ -46,6 +47,8 @@ function goodluckWriter(){
 const writer3 = setTimeout(goodluckWriter,28000)
 
 continueButton.addEventListener("click",()=>{
+    sound.currentTime = 0
+    sound.play()
     window.open("game.html","_self")
 })
 
@@ -54,6 +57,8 @@ const writer4 = setTimeout(()=>{
 },29000)
 
 skip.addEventListener("click",()=>{
+    sound.currentTime = 0
+    sound.play()
     flag = false
     title.innerHTML = text1
     instruction.innerHTML = text2

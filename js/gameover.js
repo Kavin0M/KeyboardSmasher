@@ -1,5 +1,6 @@
 const background = document.getElementById("background")
 let nickname = localStorage.getItem("nickname")
+let sound = new Audio("sound.mp3")
 
 const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim diam vulputate ut pharetra sit amet aliquam id diam. Vestibulum morbi blandit cursus risus at. Eget gravida cum sociis natoque penatibus et magnis dis. Placerat in egestas erat imperdiet sed euismod. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Sed viverra ipsum nunc aliquet bibendum. Tincidunt eget nullam non nisi est sit amet facilisis magna. Convallis a cras semper auctor neque. Elementum nibh tellus molestie nunc non blandit massa. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Senectus et netus et malesuada fames ac turpis. Amet nisl suscipit adipiscing bibendum est ultricies integer quis.
 
@@ -218,5 +219,7 @@ let score = localStorage.getItem(nickname)
 points.innerText = score
 
 document.getElementById("retry").addEventListener("click",()=>{
+    sound.currentTime = 0
+    sound.play()
     window.open("instruction.html","_self")
 })
