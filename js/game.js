@@ -117,6 +117,8 @@ function touch(e){
 }
 
 function buttonGlow(element){
+    sound.currentTime = 0
+    sound.play()
     let button = document.getElementById(element)
     button.style.boxShadow = ` 0 5px 10px 10px white`
     setTimeout(()=>{
