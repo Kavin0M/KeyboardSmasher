@@ -67,5 +67,3 @@ skip.addEventListener("click",()=>{
     clearTimeout(writer3)
     clearTimeout(writer4)
 })
-
-console.log(skip)

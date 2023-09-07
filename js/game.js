@@ -40,8 +40,8 @@ function check(button,arr){
             flag = false
         }
     }else{
-        localStorage.setItem(nickname,score)
-        window.open("gameover.html","_self")
+        // localStorage.setItem(nickname,score)
+        // window.open("gameover.html","_self")
     }
 }
 
@@ -65,7 +65,7 @@ function displayLetter(arr){
     let i = 0
     const display = setInterval(()=>{
         if (i<arr.length){
-            buttonFlash(arr[i])
+            buttonGlow(arr[i])
             i++
         }else{
             clearInterval(display)
@@ -76,17 +76,23 @@ function displayLetter(arr){
     },(arr.length+0.5)*1000)
 }
 
-function buttonFlash(element){
+function buttonPress(element){
     let button = document.getElementById(element)
     button.style.backgroundColor = "#2b2b2b"
     button.style.color = "white"
     button.style.borderColor = "white"
+    button.style.boxShadow = "0px 0px"
+    button.style.transform = "translateX(5px)"
+    button.style.transform = "translateY(5px)"
     sound.currentTime = 0
     sound.play()
     setTimeout(()=>{
         button.style.backgroundColor = colorList[button.classList[2]]
         button.style.color = "black"
         button.style.borderColor = "black"
+        button.style.boxShadow = "0 5px 5px"
+        button.style.transform = "translateX(0px)"
+        button.style.transform = "translateY(0px)"
     },200)
 }
 
@@ -94,7 +100,7 @@ function press(e){
     return (e)=>{
         if (flag){
             let button = e.key.toLowerCase()
-            buttonFlash(button)
+            buttonPress(button)
             check(button,arr)
         }
     }
@@ -104,8 +110,16 @@ function touch(e){
     return (e)=>{
         if(e.target.classList[0] == "button" && flag){
             let button = e.target.id
-            buttonFlash(button)
+            buttonPress(button)
             check(button,arr)
         }
     }
+}
+
+function buttonGlow(element){
+    let button = document.getElementById(element)
+    button.style.boxShadow = ` 0 5px 10px 10px white`
+    setTimeout(()=>{
+        button.style.boxShadow = "0 5px 5px"
+    },300)
 }
