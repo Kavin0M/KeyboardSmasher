@@ -1,5 +1,6 @@
 let nickname = localStorage.getItem("nickname")
-let sound = new Audio("sound.mp3")
+let click = new Audio("sound.mp3")
+let flash = new Audio("display.mp3")
 const button = document.getElementById("num1")
 const scoreDisplay = document.getElementById("points")
 const colorList = {
@@ -40,8 +41,8 @@ function check(button,arr){
             flag = false
         }
     }else{
-        // localStorage.setItem(nickname,score)
-        // window.open("gameover.html","_self")
+        localStorage.setItem(nickname,score)
+        window.open("gameover.html","_self")
     }
 }
 
@@ -84,8 +85,8 @@ function buttonPress(element){
     button.style.boxShadow = "0px 0px"
     button.style.transform = "translateX(5px)"
     button.style.transform = "translateY(5px)"
-    sound.currentTime = 0
-    sound.play()
+    click.currentTime = 0
+    click.play()
     setTimeout(()=>{
         button.style.backgroundColor = colorList[button.classList[2]]
         button.style.color = "black"
@@ -117,8 +118,8 @@ function touch(e){
 }
 
 function buttonGlow(element){
-    sound.currentTime = 0
-    sound.play()
+    flash.currentTime = 0
+    flash.play()
     let button = document.getElementById(element)
     button.style.boxShadow = ` 0 5px 10px 10px white`
     setTimeout(()=>{
