@@ -1,4 +1,9 @@
 const background = document.getElementById("background")
+const content = document.getElementById("content")
+const leader = document.getElementById("leader")
+const  board = document.getElementById("board")
+const close = document.getElementById("close")
+const table = document.querySelector("table")
 let nickname = localStorage.getItem("nickname")
 let sound = new Audio("sound.mp3")
 
@@ -223,3 +228,32 @@ document.getElementById("retry").addEventListener("click",()=>{
     sound.play()
     window.open("instruction.html","_self")
 })
+
+leader.addEventListener("click",()=>{
+    board.style.display = "block"
+    content.style.filter = "blur(10px)"
+})
+
+close.addEventListener("click",()=>{
+    board.style.display = "none"
+    content.style.filter = "blur(0px)"
+})
+
+const len = localStorage.length
+let data = new Object
+let anotherData = new Object
+
+for (let i = 0; i<len; i++){
+    let temp = localStorage.key(i)
+    let item = localStorage.getItem(temp)
+    if ("1234567890".includes(item)){
+        data[temp] = item
+    }
+}
+
+data = Object.entries(data).sort((a, b) => b[1] - a[1]);
+let length = data.length
+
+for (let i = 0; i<Math.min(len,3); i++){
+    table.innerHTML += `<tr><td>${i+1}</td><td>${data[i][0]}</td><td>${data[i][1]}</td></tr>`
+}

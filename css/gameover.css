@@ -61,6 +61,44 @@ body{
     color: gray;
 }
 
+#board{
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#close{
+    font-size: 50px;
+    text-align: end;
+    cursor: pointer;
+}
+
+#leader{
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+    font-size: 30px;
+    font-weight: 600;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #ffffffe6;
+    color: black;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+}
+
 @media (orientation: landscape) and (max-height: 600px){
     #gameover{
         margin: 20px 0px;

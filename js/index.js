@@ -9,6 +9,7 @@ button.addEventListener("click",()=>{
     if (document.getElementById("username").value != ""){
       document.getElementById("alert1").style.display = "none"
       const username = document.getElementById("username").value
+      localStorage.setItem("username",username)
     }else{
       document.getElementById("alert1").style.display = "block"
     }
