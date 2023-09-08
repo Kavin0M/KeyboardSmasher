@@ -4,6 +4,7 @@ const leader = document.getElementById("leader")
 const  board = document.getElementById("board")
 const close = document.getElementById("close")
 const table = document.querySelector("table")
+const maxcount = localStorage.getItem("maxcount")
 let nickname = localStorage.getItem("nickname")
 let sound = new Audio("sound.mp3")
 
@@ -230,7 +231,7 @@ document.getElementById("retry").addEventListener("click",()=>{
 })
 
 leader.addEventListener("click",()=>{
-    board.style.display = "block"
+    board.style.display = "flex"
     content.style.filter = "blur(10px)"
 })
 
@@ -256,4 +257,8 @@ let length = data.length
 
 for (let i = 0; i<Math.min(len,3); i++){
     table.innerHTML += `<tr><td>${i+1}</td><td>${data[i][0]}</td><td>${data[i][1]}</td></tr>`
+}
+
+if (maxcount){
+    document.getElementById("special").style.display = "block"
 }

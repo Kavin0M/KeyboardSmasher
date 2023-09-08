@@ -3,6 +3,8 @@ let click = new Audio("sound.mp3")
 let flash = new Audio("display.mp3")
 const button = document.getElementById("num1")
 const scoreDisplay = document.getElementById("points")
+
+// List of colors present in keyboard
 const colorList = {
     color1: "#845EC2",
     color2: "#D65DB1",
@@ -23,6 +25,7 @@ resetFunction()
 document.addEventListener("keydown",press(e))
 document.addEventListener("click",touch(e))
 
+// This resets every variable and creates new array of letters
 function resetFunction(){
     times++
     score++
@@ -32,6 +35,7 @@ function resetFunction(){
     displayLetter(arr)
 }
 
+// This checks if the user presses button in correct order 
 function check(button,arr){
     let len = arr.length
      if (arr[pressCount] == button){
@@ -40,12 +44,18 @@ function check(button,arr){
             resetFunction()
             flag = false
         }
+        if(pressCount == 26){
+            localStorage.setItem("maxcount",true)
+            localStorage.setItem(nickname,score)
+            window.open("gameover.html","_self")
+        }
     }else{
         localStorage.setItem(nickname,score)
         window.open("gameover.html","_self")
     }
 }
 
+// Creates array of letters 
 function letterSelect(count){
     let temp = new Array
     for (let i = 0;i<count; i++){
@@ -58,10 +68,12 @@ function letterSelect(count){
     return temp
 }
 
+// Upadtes the score displayed on screen
 function scoreUpdate(){
     scoreDisplay.innerText = score
 }
 
+// Flashes the letters in the order 
 function displayLetter(arr){
     let i = 0
     const display = setInterval(()=>{
@@ -77,6 +89,7 @@ function displayLetter(arr){
     },(arr.length+0.5)*1000)
 }
 
+// Creates efeect when the key is pressed 
 function buttonPress(element){
     let button = document.getElementById(element)
     button.style.backgroundColor = "#2b2b2b"
@@ -99,6 +112,7 @@ function buttonPress(element){
     },200)
 }
 
+// Event listner for when key is pressed in keyboard 
 function press(e){
     return (e)=>{
         if (flag){
@@ -109,6 +123,7 @@ function press(e){
     }
 }
 
+// Event listner for when key is touched 
 function touch(e){
     return (e)=>{
         if(e.target.classList[0] == "button" && flag){
@@ -119,6 +134,7 @@ function touch(e){
     }
 }
 
+// Button flashes 
 function buttonGlow(element){
     flash.currentTime = 0
     flash.play()
