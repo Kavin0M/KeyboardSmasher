@@ -9,6 +9,7 @@
 
 body{
     background-color: #2b2b2b;
+    overflow: hidden;
 }
 
 #content{
@@ -52,7 +53,8 @@ body{
 }
 
 #background{
-    z-index: 0;
+    cursor: default;
+    z-index: -1;
     overflow: hidden;
     filter: blur(2px);
     position: fixed;
