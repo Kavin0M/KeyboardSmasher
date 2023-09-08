@@ -85,6 +85,7 @@ function buttonPress(element){
     button.style.boxShadow = "0px 0px"
     button.style.transform = "translateX(5px)"
     button.style.transform = "translateY(5px)"
+    button.style.boxShadow = ` 0 5px 10px 10px white`
     click.currentTime = 0
     click.play()
     setTimeout(()=>{
@@ -94,6 +95,7 @@ function buttonPress(element){
         button.style.boxShadow = "0 5px 5px"
         button.style.transform = "translateX(0px)"
         button.style.transform = "translateY(0px)"
+        button.style.boxShadow = "0 5px 5px"
     },200)
 }
 
